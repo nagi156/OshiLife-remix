@@ -7,4 +7,6 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export default function Index() {}
+export default function Index() {
+  return <main className="">test</main>;
+}
