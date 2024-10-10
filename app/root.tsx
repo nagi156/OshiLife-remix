@@ -6,15 +6,9 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import "./tailwind.css";
-import type { LinksFunction } from "@remix-run/node";
+import { Sidber } from "./routes/sidber";
 
-import appStylesHref from "./app.css?url";
-
-export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: appStylesHref },
-];
-
-export function Layout({ children }: { children: React.ReactNode }) {
+export default function App() {
   return (
     <html lang="ja">
       <head>
@@ -24,14 +18,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <div className="flex flex-wrap">
+          <div className="w-1/4 p-4">
+            <Sidber />
+          </div>
+          <div className="w-3/4 p-4">
+            <Outlet />
+          </div>
+        </div>
         <ScrollRestoration />
         <Scripts />
       </body>
     </html>
   );
-}
-
-export default function App() {
-  return <Outlet />;
 }

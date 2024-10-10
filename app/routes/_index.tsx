@@ -8,5 +8,9 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-  return <main className="">test</main>;
+  return (
+    <>
+      <h1>一覧</h1>
+    </>
+  );
 }
