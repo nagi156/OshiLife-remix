@@ -2,16 +2,11 @@ import { parseWithZod } from "@conform-to/zod";
 import { ActionFunctionArgs } from "@remix-run/node";
 import { Form, json } from "@remix-run/react";
 import { useId } from "react";
-import { z } from "zod";
-
-const schema = z.object({
-  title: z.string().trim().min(1).max(50),
-  content: z.string().trim().min(1).max(140),
-});
+import { sidbarSchema } from "./conponents/sidbar";
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const fd = await request.formData();
-  const submission = parseWithZod(fd, { schema });
+  const submission = parseWithZod(fd, { schema: sidbarSchema });
   if (submission.status !== "success") {
     return json(submission.reply());
   }

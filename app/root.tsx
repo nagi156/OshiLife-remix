@@ -6,7 +6,7 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import "./tailwind.css";
-import { Sidber } from "./routes/sidber";
+import { Sidber } from "./routes/sidbar";
 
 export default function App() {
   return (
