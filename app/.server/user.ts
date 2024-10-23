@@ -2,7 +2,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-async function main() {
+async function UserSever() {
   const userWithPosts = await prisma.user.findMany({
     include: {
       posts: true,
@@ -13,7 +13,7 @@ async function main() {
   });
 }
 
-main()
+UserSever()
   .then(async () => {
     await prisma.$disconnect();
   })
