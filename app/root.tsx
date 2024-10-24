@@ -6,7 +6,7 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import "./tailwind.css";
-import { Sidber } from "./routes/sidbar";
+//import { Sidber } from "./routes/sidbar";
 
 export default function App() {
   return (
@@ -18,13 +18,8 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <div className="flex flex-wrap">
-          <div className="w-1/4 p-4">
-            <Sidber />
-          </div>
-          <div className="w-3/4 p-4">
-            <Outlet />
-          </div>
+        <div>
+          <Outlet />
         </div>
         <ScrollRestoration />
         <Scripts />

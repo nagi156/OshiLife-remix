@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .input-text {
-  @apply block border-2 rounded w-full;
+  @apply block border-2 rounded w-3/6 text-2xl;
 }
 
 .error-message {
